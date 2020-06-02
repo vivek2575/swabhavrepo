@@ -1,0 +1,101 @@
+<html style="text-align: center;">
+  <div style="background-color:transparent;">
+    {{title | tcase}}
+  <h1 style="color: rgb(255, 17, 0);"> HELLO {{Name}}</h1>
+<h2 style="color: rgb(21, 255, 0);">{{well | tcase}}<nav>{{ 50 |currency}}</nav>
+  <nav style="background-color: black;">Sum is {{sum}}</nav>
+</h2>
+</div>
+<div>
+  <p>{{childdata}}</p>
+  <welcome-child (notify)="parentMethod($event)" [uname]="username"></welcome-child>
+</div>
+
+<div style="background-color: violet;">
+
+
+  <div class="container">
+    <h1>student form</h1>
+    <form #eform="ngForm" (ngSubmit)="clickButton()" novalidate>
+  <h1>ENROLLMENT FORM</h1>
+  <div class="form-group">
+  <label>Name</label>
+  <input type="text" required name="userName" [(ngModel)]="udata.name" id="name" name="name" class="form-control"
+        required minlength="4" appForbiddenName="Admin"
+        [(ngModel)]="udata.name" #name="ngModel" >
+
+  <div *ngIf="name.invalid && (name.dirty || name.touched)"
+      class="alert alert-danger">
+
+    <div *ngIf="name.errors.required" color:red  style="color: red;">
+      Name is required.
+    </div>
+    <div *ngIf="name.errors.minlength"  color:red  style="color: red;">
+      Name must be at least 4 characters long.
+    </div>
+    <div *ngIf="name.errors.forbiddenName"  color:red  style="color: red;">
+      Name cannot be Admin.
+    </div>
+
+  </div> </div><br><br>
+
+  <div class="form-group">
+  <label>E-mail</label>
+  <input  type="text" required name="email" [(ngModel)]="udata.email" id="email" name="email" class="form-control"
+        required [(ngModel)]="udata.email" #email="ngModel" >
+
+  <div *ngIf="email.invalid && (email.dirty || email.touched)"
+      class="alert alert-danger">
+
+    <div *ngIf="email.errors.required"  color:red  style="color: red;">
+      Name is required.
+    </div>
+
+  </div></div>
+  <br><br>
+
+  <div class="form-group">
+  <label>Phone No.</label>
+  <input type="text" required name="Phone" [(ngModel)]="udata.phone" id="phone" name="phone" class="form-control"
+        required minlength="10" maxlength="10" [(ngModel)]="udata.phone" #phone="ngModel" >
+
+  <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+      class="alert alert-danger">
+
+    <div *ngIf="phone.errors.required"  color:red  style="color: red;">
+      Phone No.?.
+    </div>
+    <div *ngIf="phone.errors.minlength"  color:red  style="color: red;">
+      No. must be of 10 digit.
+    </div>
+
+  </div></div>
+  <br><br>
+  <div *ngIf="eform.valid">
+  <button type="submit">Submit</button>
+  </div>
+
+  </form>
+  </div>
+</div>
+
+<div style="background-color: sandybrown;">
+  <h3>Enrollment Data</h3>
+  <table>
+    <tr *ngFor="let j of u">
+      <td>{{j.name}}</td>
+      <td>{{j.email}}</td>
+      <td>{{j.phone}}</td>
+    </tr>
+  </table>
+</div>
+<div style="background-color: seagreen;">
+  <h1>Routing</h1>
+  <a routerLink="first">First</a>
+  &nbsp;&nbsp;
+  <a routerLink="second">Second</a>
+  <router-outlet></router-outlet>
+</div>
+
+</html>
+
