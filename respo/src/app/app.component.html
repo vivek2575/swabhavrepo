@@ -1,0 +1,57 @@
+<!--<table class="table table-striped">
+  <thead>
+      <tr class="table-info">
+          <th scope="col">age</th>
+          <th scope="col">date</th>
+          <th scope="col">email</th>
+          <th scope="col">id</th>
+          <th scope="col">name</th>
+          <th scope="col">rollno</th>
+          <th scope="col">isMale</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor = "let result of data">
+          <th scope="row">{{result.age}}</th>
+          <td>{{result.date}}</td>
+          <td>{{result.email}}</td>
+          <td>{{result.id}}</td>
+          <td>{{result.name}}</td>
+          <td>{{result.rollno}}</td>
+          <td>{{result.isMale}}</td>
+      </tr>
+  </tbody>
+</table>-->
+
+
+<div>
+  <button class="btn btn-primary" (click)="getstudent()">get student data</button>
+</div>
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+        <th>Id</th>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>age</th>
+        <th>Email</th>
+        <th>Date</th>
+        <th>Gender</th>
+    </tr>
+</thead>
+<div class="text-center">
+  <p class="lead" *ngIf="loading">Loading........</p>
+</div>
+<tbody>
+  <tr *ngFor="let result of xtra">
+    <td>{{result.id}}</td>
+    <td>{{result.rollNo}}</td>
+    <td>{{result.name}}</td>
+    <td>{{result.age}}</td>
+    <td>{{result.email}}</td>
+    <td>{{result.date}}</td>
+    <td>{{result.isMale}}</td><hr>
+  </tr>
+</tbody>
+</table>
+
