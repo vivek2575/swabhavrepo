@@ -1,0 +1,34 @@
+<div class="loader" *ngIf="loader">
+
+</div>
+<table class="table table-hover table-bordered" *ngIf="!loader">
+    <thead>
+      <tr>
+          <th>Id</th>
+          <th>Roll No</th>
+          <th>Name</th>
+          <th>age</th>
+          <th>Email</th>
+          <th>Date</th>
+          <th>Gender</th>
+          <th>update</th>
+          <th>delete</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let result of studentlist">
+      <td>{{result.id}}</td>
+      <td>{{result.rollNo}}</td>
+      <td>{{result.name}}</td>
+      <td>{{result.age}}</td>
+      <td>{{result.email}}</td>
+      <td>{{result.date}}</td>
+      <td><div *ngIf="result.isMale ; else elseBlock">male</div>
+      <ng-template #elseBlock>female</ng-template></td>
+      <td><a [routerLink]="['/updatestudent',result.id]" >update student</a></td>
+      <td><a [routerLink]="['/deletestudent',result.id]" >delete student</a></td>
+      <hr>
+    </tr>
+  </tbody>
+  </table>
+  <router-outlet></router-outlet>

@@ -1,0 +1,49 @@
+<div class="container">
+<form #studentform="ngForm" (ngSubmit)="onsubmit()" novalidate>
+    <div class="form-group">
+      <label>ID</label><br>
+      <input type="number" required #id="ngModel" [class.is-invalid]="id.invalid && id.touched" 
+      class="form-control" name="id" [(ngModel)]="studentdata.id" ><br>
+      <small [class.d-none]="id.valid || id.untouched">ID is required</small>
+    </div>
+    <div class="form-group">
+        <label>roll no.</label><br>
+        <input type="number" required #rollno="ngModel" [class.is-invalid]="rollno.invalid && rollno.touched" 
+        class="form-control" name="rollno" [(ngModel)]="studentdata.rollNo" ><br>
+        <small [class.d-none]="rollno.valid || rollno.untouched">roll no is required</small>
+      </div>
+      <div class="form-group">
+        <label>name</label><br>
+        <input type="text" required #name="ngModel" [class.is-invalid]="name.invalid && name.touched" 
+        class="form-control" name="name" [(ngModel)]="studentdata.name" ><br>
+        <small [class.d-none]="name.valid || name.untouched">name is required</small>
+      </div>
+      <div class="form-group">
+        <label>age</label><br>
+        <input type="number" required #age="ngModel" [class.is-invalid]="age.invalid && age.touched" 
+        class="form-control" name="age" [(ngModel)]="studentdata.age" ><br>
+        <small [class.d-none]="age.valid || age.untouched">age is required</small>
+      </div>
+      <div class="form-group">
+        <label>email</label><br>
+        <input type="text" required #email="ngModel" [class.is-invalid]="email.invalid && email.touched" 
+        class="form-control" name="email" [(ngModel)]="studentdata.email" ><br>
+        <small [class.d-none]="email.valid || email.untouched">email is required</small>
+      </div>
+      <div class="form-group">
+        <label>date</label><br>
+        <input type="date" required #date="ngModel" [class.is-invalid]="date.invalid && date.touched" 
+        class="form-control" name="date" [(ngModel)]="studentdata.date" ><br>
+        <small [class.d-none]="date.valid || date.untouched">date is required</small>
+      </div>
+      <div class="form-group">
+        <label>isMale</label><br>
+        <input type="text" required #gender="ngModel" [class.is-invalid]="gender.invalid && gender.touched" 
+        class="form-control" name="gender" [(ngModel)]="studentdata.isMale" ><br>
+        <small [class.d-none]="gender.valid || gender.untouched">gender is required</small>
+      </div>
+    <div *ngIf="studentform.valid">
+      <button type="submit">submit</button>
+    </div>
+  </form>
+</div>
