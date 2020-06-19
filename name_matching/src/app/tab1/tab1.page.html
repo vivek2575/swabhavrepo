@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Name Matching
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-item>
+    <ion-label position="floating">Name1</ion-label>
+    <ion-input type="text" [(ngModel)]="name1" name="name1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Name2</ion-label>
+    <ion-input type="text" [(ngModel)]="name2" name="name2"></ion-input>
+  </ion-item>
+  <ion-button color="primary" (click)="match()">% Match</ion-button>
+  <br><br>
+  <h1>{{e1}}</h1><br>
+  <ion-icon name="heart" style="color: red;"></ion-icon>
+  <h1>{{e2}}</h1>
+  <h1>{{n}}</h1>
+  <app-explore-container name="Tab 1 page"></app-explore-container>
+</ion-content>
+
