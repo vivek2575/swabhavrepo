@@ -1,0 +1,136 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      ADD STUDENTS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+    <ion-item lines="full">
+      <ion-label position="floating">Id</ion-label>
+      <ion-input formControlName="id" type="number" [(ngModel)]="studentdata.id"></ion-input>
+    </ion-item>
+    <span style="color: red;" class="error ion-padding" *ngIf="isSubmitted && errorControl.id.errors?.required">
+      Mobile number is required.
+    </span>
+    <span style="color: red;"  class="error ion-padding" *ngIf="isSubmitted && errorControl.id.errors?.pattern">
+      Only numerical values allowed.
+    </span>
+    <ion-item lines="full">
+      <ion-label position="floating">Roll No.</ion-label>
+      <ion-input formControlName="rollno" type="number" [(ngModel)]="studentdata.rollNo" ></ion-input>
+    </ion-item>
+    <span style="color: red;"  class="error ion-padding" *ngIf="isSubmitted && errorControl.rollno.errors?.required">
+      RollNo. number is required.
+    </span>
+    <span style="color: red;"  class="error ion-padding" *ngIf="isSubmitted && errorControl.rollno.errors?.pattern">
+      Only numerical values allowed.
+    </span>
+    <ion-item lines="full">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" type="text" [(ngModel)]="studentdata.name"></ion-input>
+    </ion-item>
+    <span style="color: red;"  class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+      Name is required.
+    </span>
+    <span style="color: red;"  class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.minlength">
+      Name should be min 2 chars long.
+    </span>
+    <ion-item lines="full">
+      <ion-label position="floating">Age</ion-label><br>
+      <ion-input formControlName="age" type="number" [(ngModel)]="studentdata.age" ></ion-input>
+      </ion-item>
+      <span style="color: red;"  class="error ion-padding" *ngIf="isSubmitted && errorControl.age.errors?.required">
+        Age is required.
+      </span>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email" [(ngModel)]="studentdata.email"></ion-input>
+    </ion-item>
+    <span style="color: red;"  class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+      Email is required.
+    </span>
+    <span style="color: red;"  class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+      Please provide valid email id.
+    </span>
+    <ion-item lines="full">
+      <ion-label position="floating">DOB</ion-label>
+      <ion-datetime (ionChange)="getDate($event)" formControlName="dob" [value]="defaultDate" [(ngModel)]="studentdata.date"></ion-datetime>
+    </ion-item>
+    <span style="color: red;"  class="error ion-padding" *ngIf="isSubmitted && errorControl.dob.errors?.required">
+      DOB number is required.
+    </span>
+
+    <ion-item lines="full">
+      <ion-label position="floating">IsMale ?</ion-label><br>
+      <ion-input formControlName="gender" type="text" [(ngModel)]="studentdata.isMale" ></ion-input>
+      </ion-item>
+      <span style="color: red;"  class="error ion-padding" *ngIf="isSubmitted && errorControl.gender.errors?.required">
+         true/false is required.
+      </span>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Submit</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+  <h3 style="color: green;">{{ l }}</h3>
+
+  <ion-button (click)="go()" color="danger" expand="block">Go To Home</ion-button>
+
+</ion-content>
+
+
+
+
+
+
+
+<!--<ion-content>
+          <ion-item>
+            <ion-label position="floating">Id</ion-label>
+            <ion-input type="number" name="id" [(ngModel)]="studentdata.id"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="floating">rool no.</ion-label>
+            <ion-input type="number" name="rollno" [(ngModel)]="studentdata.rollNo" ></ion-input>
+          </ion-item>
+           
+          
+          
+            <ion-item>
+            <ion-label position="floating">name</ion-label><br>
+            <ion-input type="text" name="name" [(ngModel)]="studentdata.name" ></ion-input>
+            </ion-item>
+          
+          
+            <ion-item>
+            <ion-label position="floating">age</ion-label><br>
+            <ion-input type="number" name="age" [(ngModel)]="studentdata.age" ></ion-input>
+            </ion-item>
+      
+            <ion-item>
+            <ion-label position="floating">email</ion-label><br>
+            <ion-input type="text" name="email" [(ngModel)]="studentdata.email" ></ion-input>
+            </ion-item>
+        
+        
+            <ion-item>
+            <ion-label position="floating">date</ion-label><br>
+            <ion-input type="date" name="date" [(ngModel)]="studentdata.date" ></ion-input>
+            </ion-item>
+          
+          
+            <ion-item>
+            <ion-label position="floating">isMale</ion-label><br>
+            <ion-input type="text" name="gender" [(ngModel)]="studentdata.isMale" ></ion-input>
+            </ion-item>
+          
+        
+          <ion-button (click)="onsubmit()"  color='primary'>submit</ion-button>
+    
+</ion-content> -->

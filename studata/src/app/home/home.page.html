@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar >
+    <ion-title style="color: tomato;">
+      Student's Home Page
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<br><br><br>
+<ion-content>
+  <navbar>
+    <ion-button (click)="studetail()" expand="full">
+      <ion-icon name="analytics-outline"></ion-icon> SHOW STUDENT
+    </ion-button><br><br>
+    <ion-button color ='secondary'  ion-button icon-only (click)="addstud()" expand="full">
+      <ion-icon name="add"></ion-icon>ADD STUDENT
+    </ion-button>
+  </navbar>
+</ion-content>

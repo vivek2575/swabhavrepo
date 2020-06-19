@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>studetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollX="true">
+  <div class="loader" *ngIf="loader">
+
+  </div>
+  <table class="table table-hover table-bordered" *ngIf="!loader">
+      <thead>
+        <tr>
+            <th>Id</th>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>age</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Gender</th>
+            <th>update</th>
+            <th>delete</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of studentlist">
+        <td>{{result.id}}</td>
+        <td>{{result.rollNo}}</td>
+        <td>{{result.name}}</td>
+        <td>{{result.age}}</td>
+        <td>{{result.email}}</td>
+        <td>{{result.date}}</td>
+        <td><div *ngIf="result.isMale ; else elseBlock">male</div>
+        <ng-template #elseBlock>female</ng-template></td>
+        <td><ion-button [routerLink]="['/updatestud',result.id]" ><ion-icon name="cloud-upload-outline"></ion-icon>update</ion-button></td>
+        <td><ion-button [routerLink]="['/deletestud',result.id]" ><ion-icon name="trash-outline"></ion-icon>Delete</ion-button></td>
+        <hr>
+      </tr>
+    </tbody>
+    </table>
+    <router-outlet></router-outlet>
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>UPDATE DETAILS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Id</ion-label>
+    <ion-input type="number" name="id" [(ngModel)]="studentdata.id"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">rool no.</ion-label>
+    <ion-input type="number" name="rollno" [(ngModel)]="studentdata.rollNo" ></ion-input>
+  </ion-item>
+   
+  
+  
+    <ion-item>
+    <ion-label position="floating">name</ion-label><br>
+    <ion-input type="text" name="name" [(ngModel)]="studentdata.name" ></ion-input>
+    </ion-item>
+  
+  
+    <ion-item>
+    <ion-label position="floating">age</ion-label><br>
+    <ion-input type="number" name="age" [(ngModel)]="studentdata.age" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+    <ion-label position="floating">email</ion-label><br>
+    <ion-input type="text" name="email" [(ngModel)]="studentdata.email" ></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+    <ion-label position="floating">date</ion-label><br>
+    <ion-input type="date" name="date" [(ngModel)]="studentdata.date" ></ion-input>
+    </ion-item>
+  
+  
+    <ion-item>
+    <ion-label position="floating">isMale</ion-label><br>
+    <ion-input type="text" name="gender" [(ngModel)]="studentdata.isMale" ></ion-input>
+    </ion-item>
+  
+
+  <ion-button (click)="onsubmit()"  color='primary'>submit</ion-button>
+
+  <h3 style="color: green;">{{ l }}</h3>
+
+  <ion-button (click)="go()" color="danger" expand="block">Go To Home</ion-button>
+</ion-content>
